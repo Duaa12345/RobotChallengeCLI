@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/environment'
+
+puts "Welcome to the Robot Challenge"
+puts "Enter commands (PLACE X,Y,F, MOVE, LEFT, RIGHT, REPORT) or type EXIT to quit."
+
+processor = CommandProcessor.new
+
+loop do
+  print "> "
+  input = gets.strip
+  break if input == 'EXIT'
+
+  processor.execute(input)
+end
+
+puts "Goodbye!"
