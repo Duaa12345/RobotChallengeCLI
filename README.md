@@ -15,3 +15,45 @@ The Robot Challenge CLI is a Ruby on Rails command-line application simulating a
 * Ignores commands issued before a valid PLACE command.
 * Displays helpful error messages for invalid commands.
 
+## Running the Application
+
+To start the CLI, use: bin/robot_challenge
+
+### Command Examples
+
+* PLACE 0,0,NORTH
+* MOVE
+* REPORT
+* LEFT
+* MOVE
+* REPORT
+* EXIT
+
+### Output
+
+* 0,1,NORTH
+* 0,1,WEST
+* Goodbye!
+
+You can also write your commands in a file (e.g., test_commands.txt) and execute them in one go:
+To run the file you can do: ruby bin/robot_challenge test_commands.txt
+
+## Running Tests
+
+Run all the tests using: rails test
+
+## Technical Details
+
+### Application Design
+
+#### Robot Model:
+* Represents the robot's position and state.
+* Handles movements, rotations, and state validation.
+ 
+#### Table Model:
+* Represents the tabletop dimensions.
+* Ensures all movements stay within boundaries.
+
+#### Command Processor:
+* Parses and executes user commands.
+* Routes valid commands to the appropriate methods.
