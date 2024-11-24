@@ -2,17 +2,36 @@
 
 require_relative '../config/environment'
 
-puts "Welcome to the Robot Challenge"
-puts "Enter commands (PLACE X,Y,F, MOVE, LEFT, RIGHT, REPORT) or type EXIT to quit."
+puts "Welcome to the Robot Challenge CLI!"
+puts "You can enter commands interactively or provide a file as input. (bin/robot_challenge)"
+puts "Enter commands (PLACE X,Y,F, MOVE, LEFT, RIGHT, REPORT) or type EXIT to quit. (ruby bin/robot_challenge test_commands.txt)"
 
-processor = CommandProcessor.new
+robot = Robot.new
+table = Table.new
+processor = CommandProcessor.new(robot, table)
 
-loop do
-  print "> "
-  input = gets.strip
-  break if input == 'EXIT'
+if ARGV[0]
+  file_path = ARGV[0]
+  if File.exist?(file_path)
+    File.readlines(file_path).each do |line|
+      command = line.strip.upcase
+      next if command.empty?
 
-  processor.execute(input)
+      puts "> #{command}"
+      processor.execute(command)
+    end
+    puts "Finished processing file."
+  else
+    puts "File not found: #{file_path}"
+  end
+else
+  loop do
+    print "> "
+    input = gets.strip.upcase
+    break if input.upcase == 'EXIT'
+
+    processor.execute(input)
+  end
 end
 
-puts "Goodbye!"
+puts "BYE BYE!"
