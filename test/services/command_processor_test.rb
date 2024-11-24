@@ -1,7 +1,7 @@
-require 'minitest/autorun'
-require_relative '../../app/models/robot'
-require_relative '../../app/models/table'
-require_relative '../../app/services/command_processor'
+require "minitest/autorun"
+require_relative "../../app/models/robot"
+require_relative "../../app/models/table"
+require_relative "../../app/services/command_processor"
 
 class CommandProcessorTest < Minitest::Test
   def setup

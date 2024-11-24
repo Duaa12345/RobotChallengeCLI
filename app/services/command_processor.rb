@@ -9,13 +9,13 @@ class CommandProcessor
     when /^PLACE\s(\d+),(\d+),(NORTH|SOUTH|EAST|WEST)$/i
       x, y, facing = $1.to_i, $2.to_i, $3.upcase
       @robot.place(x, y, facing, @table)
-    when 'MOVE'
+    when "MOVE"
       @robot.move(@table)
-    when 'LEFT'
+    when "LEFT"
       @robot.rotate_left
-    when 'RIGHT'
+    when "RIGHT"
       @robot.rotate_right
-    when 'REPORT'
+    when "REPORT"
       puts @robot.report
     else
       puts "Invalid command: #{command}"
