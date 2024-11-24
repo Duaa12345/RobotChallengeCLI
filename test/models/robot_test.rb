@@ -1,6 +1,6 @@
-require 'minitest/autorun'
-require_relative '../../app/models/robot'
-require_relative '../../app/models/table'
+require "minitest/autorun"
+require_relative "../../app/models/robot"
+require_relative "../../app/models/table"
 
 class RobotTest < Minitest::Test
   def setup

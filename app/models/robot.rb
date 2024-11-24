@@ -59,10 +59,10 @@ class Robot
 
   def next_position
     case @facing
-    when 'NORTH' then [@x, @y + 1]
-    when 'EAST' then [@x + 1, @y]
-    when 'SOUTH' then [@x, @y - 1]
-    when 'WEST' then [@x - 1, @y]
+    when "NORTH" then [ @x, @y + 1 ]
+    when "EAST" then [ @x + 1, @y ]
+    when "SOUTH" then [ @x, @y - 1 ]
+    when "WEST" then [ @x - 1, @y ]
     end
   end
 end

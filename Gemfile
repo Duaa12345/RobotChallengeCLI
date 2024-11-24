@@ -23,4 +23,4 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
-
+gem "importmap-rails", "~> 2.0"
