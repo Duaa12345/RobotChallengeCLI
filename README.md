@@ -1,5 +1,3 @@
-# README
-
 # Robot Challenge CLI
 ## Description
 The Robot Challenge CLI is a Ruby on Rails command-line application simulating a toy robot moving on a square tabletop. The robot can receive and execute various commands while adhering to constraints to prevent falling off the table.
