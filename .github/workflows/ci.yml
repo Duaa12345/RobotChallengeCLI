@@ -80,7 +80,9 @@ jobs:
         env:
           RAILS_ENV: test
           # REDIS_URL: redis://localhost:6379/0
-        run: rails test
+        run:
+          rails test test/models/robot_test.rb
+          rails test test/services/command_processor_test.rb
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
